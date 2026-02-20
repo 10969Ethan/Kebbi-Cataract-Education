@@ -120,12 +120,42 @@
         "v_str_Action": ["AccumulateConversation"]
     },
     {
+        "iDurationLimitSeconds": 450,
+        "iNextStateIndex": 8,
+        "iStateIndex": 7,
+        "m_strFirstSentence": "現在我先為您詳細比較水晶體的差別。選擇重點在於您希望什麼距離看得最清楚，以及是否想擺脫眼鏡。",
+        "m_strStateName": "Detailed Lens Comparison",
+        "m_strSystemMessage": "凱比依據圖片介紹差別：1.單焦點看遠最清，看手機需戴眼鏡，費用約三萬或健保。2.多焦點兼顧遠近三十到四十公分，費用約六萬。3.延伸焦段看中至遠五十到八十公分最自然，費用約七點五萬至十萬。4.三焦點最全能，遠中近四十與六十公分都照顧，費用約八點五萬至十萬。不可輸出表情符號與括號。",
+        "sFace": "TTS_PeaceA",
+        "sMotion": "666_BA_ArmSCircle",
+        "sStateType": "Conversation",
+        "v_str_KeyWordMoveToNextState": ["怎麼選", "建議", "好"],
+        "v_str_Action": ["KeepSilentOff", "AccumulateConversation"]
+    },
+    {
+        "iDurationLimitSeconds": 300,
+        "iNextStateIndex": 4, 
+        "iStateIndex": 8,
+        "m_strFirstSentence": "建議可以依照生活習慣來選。如果您愛看手機、不想戴眼鏡，三焦點就很適合；常下廚或看電腦，延伸焦段則很方便。",
+        "m_strStateName": "Selection Advice",
+        "m_strSystemMessage": "依據圖片內容進行生活化引導，說明完後直接進入下一個狀態播放影片。不可輸出任何表情符號與括號。",
+        "sFace": "TTS_PeaceB",
+        "sMotion": "666_SP_Cheer",
+        "sStateType": "SaySomething",
+        "vSmallMotion": [
+            "666_BA_ArmSSquare",
+            "666_BA_RArmCircleR"
+        ],
+        "v_str_KeyWordMoveToNextState": [],
+        "v_str_Action": ["AccumulateConversation"]
+    },
+    {
         "iDurationLimitSeconds": 7,
         "iNextStateIndex": 6,
         "iStateIndex": 4,
-        "m_strFirstSentence": "請您先觀看這段術前衛教影片。",
+        "m_strFirstSentence": "聽完水晶體的介紹，請您先觀看這段術前衛教影片，了解手術當天的準備事項。",
         "m_strStateName": "Introduce preop care",
-        "m_strSystemMessage": "",
+        "m_strSystemMessage": "引導病患觀看術前衛教影片 [cite: 19]。不可輸出任何表情符號與括號。",
         "sFace": "TTS_PeaceB",
         "sMotion": "666_BA_RHandR03",
         "sStateType": "SaySomething",
@@ -137,7 +167,8 @@
         ],
         "v_str_KeyWordMoveToNextState": [],
         "v_str_Action": ["AccumulateConversation"]
-    },    
+    }
+] 
     {
         "iDurationLimitSeconds": 99,
         "iNextStateIndex": 8,
@@ -157,20 +188,72 @@
         "v_str_KeyWordMoveToNextState": [],
         "v_str_Action": ["KeepSilent","PlayVideo:Videos/Cataract_Preop.mp4","AccumulateConversation","InsertAssitantMessage:第一點：手術前一天請充足睡眠。要讓身體與眼睛在手術前保持良好的休息狀態，這樣有助於手術的順利進行。第二點：請備妥手術相關文件與健保卡。在手術當天，請記得攜帶好健保卡、手術同意書等相關文件，這樣醫護人員能更順利地為您辦理手續，讓整個流程更順暢，也能避免臨時找資料的麻煩。第三點：手術當天請穿著輕便衣物。選擇寬鬆、容易穿脫的服裝，這樣在手術和更換衣物時會更方便，也能讓您感到更舒適。第四點：手術前不得佩戴任何飾品。包括項鍊、耳環、手鍊等，這樣可以避免手術過程中出現不便，也確保手術的安全和順利進行。第五點：手術過程中不得隨意觸碰。在手術過程請不要隨意觸碰已經消毒過的部位，這是因為護士在手術前已經仔細消毒了相關區域，如果您過程中觸碰它，就必需重新消毒，這不僅會增加感染的風險，也會延長手術時間，所以請務必保持耐心避免觸碰。第六點：手術結束後請至領藥櫃檯。請在休息之後前往領藥櫃檯，在那裡護理人員會為您準備術後的藥物，並且詳細叮囑您術後的照護注意事項，讓您清楚接下來如何照顧自己。"]
     },
+   [
     {
         "iDurationLimitSeconds": 100,
-        "iNextStateIndex": 9,
+        "iNextStateIndex": 10,
         "iStateIndex": 8,
-        "m_strFirstSentence": "請問您有什麼問題嗎？",
+        "m_strFirstSentence": "請問您對剛才的術前準備還有什麼問題嗎？",
         "m_strStateName": "Question about preop care",
-        "m_strSystemMessage": "",
+        "m_strSystemMessage": "若病患有問題，請回答並記錄；若病患回答沒有問題，則跳轉至測驗環節。不可輸出表情符號與括號。",
         "sFace": "TTS_PeaceA",
         "sMotion": "666_SA_Think",
         "sStateType": "Conversation",
         "vSmallMotion": [],
-        "v_str_KeyWordMoveToNextState": ["沒有", "沒問題"],
-        "v_str_Action": ["KeepSilentOff","AccumulateConversation"]
+        "v_str_KeyWordMoveToNextState": ["沒有", "沒問題", "沒了"],
+        "v_str_Action": ["KeepSilentOff", "AccumulateConversation"]
     },
+    {
+        "iDurationLimitSeconds": 10,
+        "iNextStateIndex": 11,
+        "iStateIndex": 10,
+        "m_strFirstSentence": "太好了！看來您對術前準備已經很了解。接下來，為了確保您對人工水晶體的功能與選擇也有正確的認識，我們來進行一個小測驗。準備好了嗎？",
+        "m_strStateName": "Transition to Quiz",
+        "m_strSystemMessage": "引導病患進入測驗。不可輸出表情符號與括號。",
+        "sFace": "TTS_PeaceB",
+        "sMotion": "666_SP_Cheer",
+        "sStateType": "SaySomething",
+        "vSmallMotion": [],
+        "v_str_KeyWordMoveToNextState": [],
+        "v_str_Action": ["AccumulateConversation"]
+    },
+    {
+        "iDurationLimitSeconds": 60,
+        "iNextStateIndex": 12,
+        "iStateIndex": 11,
+        "m_strFirstSentence": "第一題：請問自費的飛秒雷射手術大約需要多少錢呢？",
+        "m_strStateName": "Quiz Q1",
+        "m_strSystemMessage": "正確答案是七萬五千元。判斷病患回答並給予對錯回饋後，自動進入下一題。不可輸出表情符號與括號。",
+        "sFace": "TTS_PeaceA",
+        "sMotion": "666_BA_Nodhead",
+        "sStateType": "Conversation",
+        "v_str_Action": ["AccumulateConversation"]
+    },
+    {
+        "iDurationLimitSeconds": 60,
+        "iNextStateIndex": 21,
+        "iStateIndex": 20,
+        "m_strFirstSentence": "最後一題，多焦點水晶體的自費費用大約是多少錢呢？",
+        "m_strStateName": "Quiz Q10",
+        "m_strSystemMessage": "正確答案是大約六萬元。答對後給予鼓勵，並準備進入術後影片播放。不可輸出表情符號與括號。",
+        "sFace": "TTS_PeaceB",
+        "sMotion": "666_SP_Cheer",
+        "sStateType": "Conversation",
+        "v_str_Action": ["AccumulateConversation"]
+    },
+    {
+        "iDurationLimitSeconds": 10,
+        "iNextStateIndex": 9,
+        "iStateIndex": 21,
+        "m_strFirstSentence": "您真是太優秀了！測驗全部通過。最後，讓我們一起來了解手術後的照護注意事項吧。",
+        "m_strStateName": "To Postop Intro",
+        "m_strSystemMessage": "測驗完成，跳轉至術後衛教影片引導。不可輸出表情符號。",
+        "sFace": "TTS_PeaceB",
+        "sMotion": "666_SP_Cheer",
+        "sStateType": "SaySomething",
+        "v_str_Action": ["AccumulateConversation"]
+    }
+]
     {
         "iDurationLimitSeconds": 10,
         "iNextStateIndex": 9,
@@ -190,6 +273,7 @@
         "v_str_KeyWordMoveToNextState": [],
         "v_str_Action": []
     },
+    
     {
         "iDurationLimitSeconds": 129,
         "iNextStateIndex": 11,
